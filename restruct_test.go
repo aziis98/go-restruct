@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/aziis98/lfr/lang/runtime/restruct"
+	"github.com/aziis98/go-restruct"
 	"gotest.tools/assert"
 )
 
