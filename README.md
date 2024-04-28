@@ -1,4 +1,4 @@
-# Restuct
+# reStruct
 
 This is a small library that uses generics and reflection to provide a nice way to convert structs and types in a highly configurable way.
 
