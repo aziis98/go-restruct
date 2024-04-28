@@ -29,26 +29,25 @@ type Bar struct {
 Then we can convert from `Foo` to `Bar` using the following
 
 ```go
-foo1 := Foo{
-    First:  1,
-    Second: "  this is my foo    ",
-}
+func main() {
+    foo1 := Foo{
+        First:  1,
+        Second: "  this is my foo    ",
+    }
 
-restruct.Convert[Bar](foo1,
-    restruct.MustFunc[SlugString, string](NewSlugString),
-    restruct.StructFromStruct[Bar, Foo]{
-        "FirstField":  "First",
-        "SecondField": "Second",
-    },
-)
-```
+    bar, _ := restruct.Convert[Bar](foo1,
+        restruct.MustFunc[SlugString, string](NewSlugString),
+        restruct.StructFromStruct[Bar, Foo]{
+            "FirstField":  "First",
+            "SecondField": "Second",
+        },
+    )
 
-and this results in
-
-```go
-Bar{
-    FirstField:  1,
-    SecondField: SlugString("this-is-my-foo"),
+    fmt.Printf("%#v", bar)
+    // Bar{
+    //     FirstField:  1,
+    //     SecondField: SlugString("this-is-my-foo"),
+    // }
 }
 ```
 
