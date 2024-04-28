@@ -53,9 +53,13 @@ func main() {
 
 ## Usage
 
+To install do
+
 ```bash shell
-go get github.com/aziis98/go-restruct
+$ go get github.com/aziis98/go-restruct
 ```
+
+and then import using
 
 ```go
 import "github.com/aziis98/go-restruct"
